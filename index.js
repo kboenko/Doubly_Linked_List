@@ -29,7 +29,7 @@ const LinkedList = require('./entities/LinkedList');
     let list = new LinkedList();
 
     for (let i = 0; i < 3; i++) {
-        list.addInTail(new Node(i+45));
+        list.addInTail(new Node(i+1));
     }
 
     console.log(list.getValues());
@@ -39,20 +39,46 @@ const LinkedList = require('./entities/LinkedList');
     console.log(list.getValues());
     console.log('____________________________________________________________');
 
-    list.deleteByValue(46);
+    list.deleteByValue(2);
     console.log(list);
     console.log('--------------------------------');
-    console.log(list.head.next);
+    /*console.log(list.head.next);
     console.log('--------------------------------');
     console.log(list.head.next.value);
     console.log('--------------------------------');
     console.log(list.head.next.prev);
-    console.log('--------------------------------');
+    console.log('--------------------------------');*/
 
     console.log(list.getValues());
 
-    list.insertAfter(new Node(38), 9999);
+    /*list.insertAfter(new Node(38), 9999);
     console.log(list.getValues());
     list.insertAfter(new Node(38), 47);
-    console.log(list.getValues());
+    console.log(list.getValues());*/
+    /*console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+
+    let lst = new LinkedList()
+
+    lst.addInTail(new Node(3));
+    lst.addInTail(new Node(4));
+    lst.addInTail(new Node(5));
+    lst.addInTail(new Node(6));
+    lst.addInTail(new Node(7));
+
+    console.log(lst.getValues());
+
+    lst.deleteByValue(5);
+
+    console.log(lst.getValues());*/
 })();

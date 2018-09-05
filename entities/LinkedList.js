@@ -22,44 +22,26 @@ class LinkedList {
 
     }
 
-    addInHead(node) {
+    addInHead(newNode) {
+        let node = this.head;
 
-        let node2Insert = node;
-        let listNode = Object.assign({}, this.head);
-
-            if (listNode.prev === null) {
-                listNode.prev = node2Insert;  // делаем элемент для вставки предыдущим по отношению к текущему (первому)
-                this.head.value = node2Insert.value; // значение элемента для вставки делаем первым
-                this.head.prev = null;
-                this.head.next = listNode; // изначальный первый элемент делаем следующим по отношению к вставляемому
-            }
+        if (node.prev === null) {
+            newNode.next = node;
+            this.head = newNode;
+        }
     }
 
     deleteByValue(value) {
         let node = this.head;
-        let prevNode = null;
 
         while (node !== null) {
-            if (node.value !== value) {
-                prevNode = node;
-            } else if (node.value === value && prevNode !== null) {
 
-                if (node.next !== null) {
-                    node.next.prev = prevNode;
-                    prevNode.next = node.next;
-                } else {
-                    prevNode.next = null;
-                    this.tail = prevNode;
-                    this.tail.next = null;
-                }
-                break;
-            } else if (node.value === value && prevNode === null) {
-                node === node.next;
+            if (node.value === value) {
+                node.prev.next = node.next;
                 break;
             }
 
             node = node.next;
-
         }
     }
 
