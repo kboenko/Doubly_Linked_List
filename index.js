@@ -51,6 +51,8 @@ const LinkedList = require('./entities/LinkedList');
 
     console.log(list.getValues());
 
+    console.log(list.find(1));
+
     /*list.insertAfter(new Node(38), 9999);
     console.log(list.getValues());
     list.insertAfter(new Node(38), 47);
@@ -81,4 +83,39 @@ const LinkedList = require('./entities/LinkedList');
     lst.deleteByValue(5);
 
     console.log(lst.getValues());*/
+
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+    console.log('____________________________________________________________');
+
+
+    let anotherList = new LinkedList();
+    anotherList.addInTail(new Node(2));
+    anotherList.addInTail(new Node(21));
+    anotherList.addInTail(new Node(25));
+    anotherList.addInTail(new Node(27));
+    anotherList.addInTail(new Node(202));
+
+    console.log(anotherList.getValues());
+
+    let m = anotherList.find(25);
+
+    console.log(anotherList.find(25));
+
+    console.log(m.before.getValues());
+    console.log(m.before);
+
+    anotherList.deleteByValue2(25);
+
+    console.log(anotherList.getValues());
+    console.log(anotherList);
 })();

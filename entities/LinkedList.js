@@ -26,6 +26,7 @@ class LinkedList {
         let node = this.head;
 
         if (node.prev === null) {
+            node.prev = newNode;
             newNode.next = node;
             this.head = newNode;
         }
@@ -44,6 +45,24 @@ class LinkedList {
             node = node.next;
         }
     }
+
+    /*deleteByValue2(value) {
+        let targetNode = this.find(value);
+        let before;
+        let target;
+
+        if (targetNode) {
+            before = targetNode.before.head;
+            target = targetNode.target;
+
+            target.next.prev = target.prev;
+            target = target.next;
+            target.prev.next = target.next;
+
+            //this.head = before;
+        }
+        this.head = target;
+    }*/
 
     insertAfter(newNode, existedValue) {
          if (this.getValues().indexOf(existedValue) === -1) {
@@ -72,6 +91,27 @@ class LinkedList {
         }
 
         return values;
+    }
+
+    find(value) {
+        let node = this.head;
+        let before = new LinkedList();
+        let target;
+
+        while (node !== null) {
+            if (node.value === value) {
+                target = node;
+                break;
+            } else {
+                before.addInTail(new Node(node.value));
+            }
+            node = node.next;
+        }
+
+        return {
+            before: before,
+            target: target
+        }
     }
 
 }
