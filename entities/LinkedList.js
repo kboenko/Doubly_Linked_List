@@ -46,23 +46,27 @@ class LinkedList {
         }
     }
 
-    /*deleteByValue2(value) {
+    deleteByValue2(value) {
         let targetNode = this.find(value);
         let before;
         let target;
 
         if (targetNode) {
-            before = targetNode.before.head;
+            before = targetNode.before;
             target = targetNode.target;
 
             target.next.prev = target.prev;
             target = target.next;
             target.prev.next = target.next;
 
-            //this.head = before;
+            while (target !== null) {
+                before.addInTail(new Node(target.value));
+                target = target.next;
+            }
+
+            this.head = before.head;
         }
-        this.head = target;
-    }*/
+    }
 
     insertAfter(newNode, existedValue) {
          if (this.getValues().indexOf(existedValue) === -1) {
