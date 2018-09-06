@@ -114,7 +114,7 @@ const LinkedList = require('./entities/LinkedList');
     console.log(m.before.getValues());
     console.log(m.before);
 
-    anotherList.deleteByValue2(25);
+    //anotherList.deleteByValue2(25);
 
     console.log(anotherList.getValues());
     console.log(anotherList);
